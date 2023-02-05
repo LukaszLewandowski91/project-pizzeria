@@ -165,7 +165,11 @@
           const option = param.options[optionId];
           console.log(optionId, option);
           if (formData[paramId] && formData[paramId].includes(optionId)) {
-            console.log('tak');
+            if (!option.default) {
+              price += option.price;
+            }
+          } else if (option.default) {
+            price -= option.price;
           }
         }
       }
