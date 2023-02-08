@@ -196,6 +196,8 @@
           }
         }
       }
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
     }
@@ -203,6 +205,9 @@
       const thisProduct = this;
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      thisProduct.amountWidgetElem.addEventListener('update', function (event) {
+        thisProduct.processOrder();
+      });
     }
   }
 
@@ -211,7 +216,9 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
       console.log('AmountWidget:', thisWidget);
       console.log('constructor argument:', element);
     }
@@ -236,10 +243,39 @@
 
       /* TODO: Add validation */
       if (newValue !== thisWidget.value && !isNaN(newValue)) {
-        thisWidget.value = newValue;
+        if (
+          newValue < settings.amountWidget.defaultMin - 1 ||
+          newValue > settings.amountWidget.defaultMax + 1
+        ) {
+          thisWidget.input.value = thisWidget.value;
+        } else {
+          thisWidget.value = newValue;
+          thisWidget.announce();
+        }
       }
 
       thisWidget.input.value = thisWidget.value;
+    }
+    initActions() {
+      const thisWidget = this;
+      thisWidget.input.addEventListener('change', function (event) {
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.input.value);
+      });
+      thisWidget.linkDecrease.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value - 1);
+      });
+      thisWidget.linkIncrease.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value + 1);
+      });
+    }
+    announce() {
+      const thisWidget = this;
+
+      const event = new Event('update');
+      thisWidget.element.dispatchEvent(event);
     }
   }
 
