@@ -206,6 +206,7 @@
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
       thisProduct.amountWidgetElem.addEventListener('update', function (event) {
+        event.preventDefault();
         thisProduct.processOrder();
       });
     }
