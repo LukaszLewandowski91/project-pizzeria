@@ -186,6 +186,8 @@
         event.preventDefault();
 
         thisProduct.processOrder();
+        thisProduct.addToCart();
+        //thisProduct.prepareCartProduct();
       });
     }
     processOrder() {
@@ -232,8 +234,10 @@
           }
         }
       }
+      thisProduct.priceSingle = price;
       /* multiply price by amount */
       price *= thisProduct.dom.amountWidget.value;
+
       // update calculated price in the HTML
       thisProduct.dom.priceElem.innerHTML = price;
     }
@@ -250,6 +254,29 @@
           thisProduct.processOrder();
         }
       );
+    }
+    addToCart() {
+      const thisProduct = this;
+
+      app.cart.add(thisProduct.prepareCartProduct());
+    }
+    prepareCartProduct() {
+      const thisProduct = this;
+
+      const productSummary = {};
+      productSummary.id = thisProduct.id;
+      productSummary.name = thisProduct.data.name;
+      productSummary.amount = thisProduct.dom.amountWidget.value;
+      productSummary.price = thisProduct.priceSingle;
+      productSummary.totalPrice = productSummary.amount * productSummary.price;
+      productSummary.params = {};
+      return productSummary;
+      //console.log('nowy koszyk', productSummary);
+    }
+    prepareCartProductParams() {
+      const thisProduct = this;
+
+      const productParams = {};
     }
   }
 
@@ -345,6 +372,11 @@
         event.preventDefault();
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
+    }
+    add(menuProduct) {
+      //const thisCart = this;
+
+      console.log('adding product', menuProduct);
     }
   }
 
