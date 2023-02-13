@@ -269,15 +269,45 @@
       productSummary.amount = thisProduct.dom.amountWidget.value;
       productSummary.price = thisProduct.priceSingle;
       productSummary.totalPrice = productSummary.amount * productSummary.price;
-      productSummary.params = {};
+      productSummary.params = thisProduct.prepareCartProductParams();
       return productSummary;
-      //console.log('nowy koszyk', productSummary);
+      
     }
     prepareCartProductParams() {
       const thisProduct = this;
 
       const productParams = {};
-    }
+
+      // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
+      const formData = utils.serializeFormToObject(thisProduct.dom.form);
+      
+      //for every category (param)
+      for (let paramId in thisProduct.data.params) {
+        const param = thisProduct.data.params[paramId];
+
+        productParams[paramId] = {
+          label: param.label,
+          options: {}
+        }
+        // for every option in this category
+        for (let optionId in param.options) {
+          // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
+          const option = param.options[optionId];
+         
+
+          const optionSelected =
+            formData[paramId] && formData[paramId].includes(optionId);
+
+          if (optionSelected) {
+            productParams[paramId].options[optionId] = option.label
+          } 
+          }
+        }
+        
+        return productParams;
+        
+      }
+    
   }
 
   class AmountWidget {
