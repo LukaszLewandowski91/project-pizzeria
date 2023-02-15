@@ -6,7 +6,9 @@
       "name": "Zio Stefano's Doughnut",
       "price": 9,
       "description": "Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.",
-      "images": ["<img class=\"active\" src=\"images/doughnut.svg\">"]
+      "images": [
+        "<img class=\"active\" src=\"images/doughnut.svg\">"
+      ]
     },
     {
       "id": "breakfast",
@@ -14,7 +16,9 @@
       "name": "Zia Giulia's Breakfast",
       "price": 9,
       "description": "There's no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests' favorite for over 50 years.",
-      "images": ["<img class=\"active\" src=\"images/breakfast.svg\">"],
+      "images": [
+        "<img class=\"active\" src=\"images/breakfast.svg\">"
+      ],
       "params": {
         "coffee": {
           "label": "Coffee type",
@@ -196,6 +200,72 @@
           }
         }
       }
+    }
+  ],
+  "orders": [
+    {
+      "address": "Krancowa",
+      "phone": "1235",
+      "totalPrice": 29,
+      "subtotalPrice": "9",
+      "totalNumber": "1",
+      "deliveryFee": "20",
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zio Stefano's Doughnut",
+          "params": {}
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Krańcowa 4b m.3",
+      "phone": "726860949",
+      "totalPrice": 49,
+      "subtotalPrice": "29",
+      "totalNumber": "3",
+      "deliveryFee": "20",
+      "products": [
+        {
+          "id": "salad",
+          "amount": 2,
+          "price": 20,
+          "priceSingle": 10,
+          "name": "Nonno Alberto's Salad",
+          "params": {
+            "ingredients": {
+              "label": "Ingredients",
+              "options": {
+                "cucumber": "Cucumber",
+                "tomatoes": "Tomatoes",
+                "olives": "Olives",
+                "feta": "Feta cheese",
+                "herbs": "Fresh herbs"
+              }
+            }
+          }
+        },
+        {
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "espresso": "Espresso"
+              }
+            }
+          }
+        }
+      ],
+      "id": 2
     }
   ]
 }
