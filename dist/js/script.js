@@ -72,6 +72,11 @@
     cart: {
       defaultDeliveryFee: 20,
     },
+    db: {
+      url: '//localhost:3131',
+      products: 'products',
+      orders: 'orders',
+    },
   };
 
   const templates = {
@@ -425,9 +430,6 @@
       /* create element using utils.createDOMFromHTML */
       const generatedDOM = utils.createDOMFromHTML(generateHTML);
 
-      /* find cart container */
-      //const generatedDOM = thisCart.dom.productList;
-
       /* add element to cart */
       thisCart.dom.productList.appendChild(generatedDOM);
 
@@ -471,9 +473,9 @@
     remove(cartProduct) {
       const thisCart = this;
 
-      const ProductHTML = cartProduct.dom.wrapper;
+      const productHTML = cartProduct.dom.wrapper;
 
-      ProductHTML.remove();
+      productHTML.remove();
       const indexOfProduct = thisCart.products.indexOf(cartProduct);
       thisCart.products.splice(indexOfProduct, 1);
       thisCart.update();
@@ -571,13 +573,31 @@
       console.log('thisApp.data', thisApp.data);
 
       for (let productData in thisApp.data.products) {
-        new Product(productData, thisApp.data.products[productData]);
+        new Product(
+          thisApp.data.products[productData].id,
+          thisApp.data.products[productData]
+        );
       }
     },
     initData: function () {
       const thisApp = this;
 
-      thisApp.data = dataSource;
+      thisApp.data = {};
+      const url = settings.db.url + '/' + settings.db.products;
+
+      fetch(url)
+        .then(function (rawResponse) {
+          return rawResponse.json();
+        })
+        .then(function (parsedResponse) {
+          console.log('parsedResponse', parsedResponse);
+          /* save parsedResponse as thisApp.data.products */
+          thisApp.data.products = parsedResponse;
+          /* execute initMenu method*/
+          thisApp.initMenu();
+        });
+
+      console.log('thisApp.data', JSON.stringify(thisApp.data));
     },
     init: function () {
       const thisApp = this;
@@ -587,7 +607,6 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
       thisApp.initData();
-      thisApp.initMenu();
       thisApp.initCart();
     },
     initCart: function () {
