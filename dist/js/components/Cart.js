@@ -151,7 +151,7 @@ class Cart {
       body: JSON.stringify(payload),
     };
 
-    console.log('body', options);
+    console.log('body', options.body, payload);
 
     fetch(url, options)
       .then(function (response) {

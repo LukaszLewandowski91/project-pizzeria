@@ -6,9 +6,7 @@
       "name": "Zio Stefano's Doughnut",
       "price": 9,
       "description": "Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.",
-      "images": [
-        "<img class=\"active\" src=\"images/doughnut.svg\">"
-      ]
+      "images": ["<img class=\"active\" src=\"images/doughnut.svg\">"]
     },
     {
       "id": "breakfast",
@@ -16,9 +14,7 @@
       "name": "Zia Giulia's Breakfast",
       "price": 9,
       "description": "There's no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests' favorite for over 50 years.",
-      "images": [
-        "<img class=\"active\" src=\"images/breakfast.svg\">"
-      ],
+      "images": ["<img class=\"active\" src=\"images/breakfast.svg\">"],
       "params": {
         "coffee": {
           "label": "Coffee type",
@@ -202,158 +198,58 @@
       }
     }
   ],
-  "orders": [
+  "orders": [],
+  "events": [
     {
-      "address": "asdasd",
-      "phone": "727",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 1
+      "id": 1,
+      "date": "2021-01-01",
+      "hour": "12:30",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
     },
     {
-      "address": "asdasd",
-      "phone": "727",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 2
+      "id": 2,
+      "date": "2021-01-01",
+      "hour": "16:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
     },
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 3
+      "id": 3,
+      "date": "2021-01-01",
+      "hour": "12:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
     },
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 4
+      "id": 4,
+      "date": "2021-01-01",
+      "hour": "13:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
     },
     {
-      "address": "asdsdasd",
-      "phone": "12",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 5
-    },
-    {
-      "address": "asdsdasd",
-      "phone": "12",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 6
-    },
-    {
-      "address": "12313",
-      "phone": "12",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 7
-    },
-    {
-      "address": "12313",
-      "phone": "12",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 8
+      "id": 5,
+      "date": "2021-01-01",
+      "hour": "18:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["lemonWater"]
     }
-  ]
+  ],
+  "bookings": []
 }
