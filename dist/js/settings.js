@@ -28,7 +28,6 @@ export const select = {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
-      z,
     },
     datePicker: {
       wrapper: '.date-picker',
