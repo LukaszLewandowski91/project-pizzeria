@@ -141,6 +141,19 @@ class Cart {
     for (let prod of thisCart.products) {
       payload.products.push(prod.getData());
     }
+    thisCart.products.length = 0;
+    thisCart.update();
+    const lists = thisCart.dom.productList.querySelectorAll(
+      '.cart__order-summary > li'
+    );
+
+    for (let list of lists) {
+      list.remove();
+    }
+
+    thisCart.dom.address.value = '';
+    thisCart.dom.phone.value = '';
+
     console.log('order', payload);
 
     const options = {
