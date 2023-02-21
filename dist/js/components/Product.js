@@ -159,6 +159,10 @@ class Product {
     thisProduct.dom.amountWidget = new AmountWidget(
       thisProduct.dom.amountWidgetElem
     );
+
+    // thisProduct.dom.amountWidget = new AmountWidget(
+    //   thisProduct.dom.amountWidgetElem
+    // );
     thisProduct.dom.amountWidgetElem.addEventListener(
       'updated',
       function (event) {
