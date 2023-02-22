@@ -80,7 +80,6 @@ class CartProduct {
       event.preventDefault();
 
       thisCartProduct.remove();
-      console.log('test');
     });
   }
   getData() {

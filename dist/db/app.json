@@ -6,7 +6,9 @@
       "name": "Zio Stefano's Doughnut",
       "price": 9,
       "description": "Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.",
-      "images": ["<img class=\"active\" src=\"images/doughnut.svg\">"]
+      "images": [
+        "<img class=\"active\" src=\"images/doughnut.svg\">"
+      ]
     },
     {
       "id": "breakfast",
@@ -14,7 +16,9 @@
       "name": "Zia Giulia's Breakfast",
       "price": 9,
       "description": "There's no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests' favorite for over 50 years.",
-      "images": ["<img class=\"active\" src=\"images/breakfast.svg\">"],
+      "images": [
+        "<img class=\"active\" src=\"images/breakfast.svg\">"
+      ],
       "params": {
         "coffee": {
           "label": "Coffee type",
@@ -198,7 +202,97 @@
       }
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "address": "asdasd",
+      "phone": "123",
+      "totalPrice": 38,
+      "subtotalPrice": "18",
+      "totalNumber": "2",
+      "deliveryFee": "20",
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zio Stefano's Doughnut",
+          "params": {}
+        },
+        {
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "latte": "Latte"
+              }
+            }
+          }
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "a",
+      "phone": "1",
+      "totalPrice": 29,
+      "subtotalPrice": "9",
+      "totalNumber": "1",
+      "deliveryFee": "20",
+      "products": [
+        {
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "latte": "Latte"
+              }
+            }
+          }
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 0,
+      "subtotalPrice": "0",
+      "totalNumber": "0",
+      "deliveryFee": "0",
+      "products": [],
+      "id": 3
+    },
+    {
+      "address": "dsdfs",
+      "phone": "133445",
+      "totalPrice": 29,
+      "subtotalPrice": "9",
+      "totalNumber": "1",
+      "deliveryFee": "20",
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zio Stefano's Doughnut",
+          "params": {}
+        }
+      ],
+      "id": 4
+    }
+  ],
   "events": [
     {
       "id": 1,
@@ -218,7 +312,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 3,
@@ -228,7 +325,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 4,
@@ -248,7 +348,9 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["lemonWater"]
+      "starters": [
+        "lemonWater"
+      ]
     }
   ],
   "bookings": []
