@@ -146,7 +146,7 @@ class Cart {
       .then(function (response) {
         return response.json();
       })
-      .then(function (parsedResponse) {
+      .then(function () {
         thisCart.products.length = 0;
         thisCart.update();
         const lists = thisCart.dom.productList.querySelectorAll(

@@ -204,8 +204,8 @@
   ],
   "orders": [
     {
-      "address": "asdasd",
-      "phone": "123",
+      "address": "Krancowa",
+      "phone": "123455",
       "totalPrice": 38,
       "subtotalPrice": "18",
       "totalNumber": "2",
@@ -236,61 +236,6 @@
         }
       ],
       "id": 1
-    },
-    {
-      "address": "a",
-      "phone": "1",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "breakfast",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zia Giulia's Breakfast",
-          "params": {
-            "coffee": {
-              "label": "Coffee type",
-              "options": {
-                "latte": "Latte"
-              }
-            }
-          }
-        }
-      ],
-      "id": 2
-    },
-    {
-      "address": "",
-      "phone": "",
-      "totalPrice": 0,
-      "subtotalPrice": "0",
-      "totalNumber": "0",
-      "deliveryFee": "0",
-      "products": [],
-      "id": 3
-    },
-    {
-      "address": "dsdfs",
-      "phone": "133445",
-      "totalPrice": 29,
-      "subtotalPrice": "9",
-      "totalNumber": "1",
-      "deliveryFee": "20",
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 4
     }
   ],
   "events": [
