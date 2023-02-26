@@ -6,7 +6,9 @@
       "name": "Zio Stefano's Doughnut",
       "price": 9,
       "description": "Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.",
-      "images": ["<img class=\"active\" src=\"images/doughnut.svg\">"]
+      "images": [
+        "<img class=\"active\" src=\"images/doughnut.svg\">"
+      ]
     },
     {
       "id": "breakfast",
@@ -14,7 +16,9 @@
       "name": "Zia Giulia's Breakfast",
       "price": 9,
       "description": "There's no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests' favorite for over 50 years.",
-      "images": ["<img class=\"active\" src=\"images/breakfast.svg\">"],
+      "images": [
+        "<img class=\"active\" src=\"images/breakfast.svg\">"
+      ],
       "params": {
         "coffee": {
           "label": "Coffee type",
@@ -218,7 +222,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 3,
@@ -239,7 +246,20 @@
       "table": 1,
       "duration": 1,
       "ppl": 4,
-      "starters": ["water"]
+      "starters": [
+        "water"
+      ]
+    },
+    {
+      "date": "2023-02-26",
+      "hour": "20:00",
+      "table": 3,
+      "duration": 2,
+      "ppl": 2,
+      "starters": [],
+      "phone": "123",
+      "address": "asdasd",
+      "id": 2
     }
   ]
 }

@@ -6,7 +6,7 @@ import HourPicker from './HourPicker.js';
 class Booking {
   constructor(element) {
     const thisBooking = this;
-
+    thisBooking.selectedTable = '';
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
@@ -150,6 +150,11 @@ class Booking {
 
     for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
+
+      if (table.classList.contains(classNames.booking.selectTable)) {
+        table.classList.remove(classNames.booking.selectTable);
+      }
+
       if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
@@ -166,12 +171,12 @@ class Booking {
   }
   initActions() {
     const thisBooking = this;
-
     thisBooking.dom.planTable.addEventListener('click', function (event) {
       event.preventDefault();
+
       const clicedTable = event.target;
       if (clicedTable.classList.contains('booked')) {
-        console.log('Stolik zajęty');
+        alert('Stolik niedostępny');
       } else {
         for (let table of thisBooking.dom.tables) {
           if (
@@ -181,10 +186,65 @@ class Booking {
             table.classList.remove(classNames.booking.selectTable);
           }
         }
+        const activeTable = clicedTable.getAttribute(
+          settings.booking.tableIdAttribute
+        );
+        thisBooking.selectedTable = activeTable;
         clicedTable.classList.toggle(classNames.booking.selectTable);
+        if (!clicedTable.classList.contains(classNames.booking.selectTable)) {
+          thisBooking.selectedTable = '';
+        }
       }
     });
   }
+
+  sendBooking() {
+    const thisBooking = this;
+
+    const url = settings.db.url + '/' + settings.db.booking;
+
+    const payload = {
+      date: thisBooking.datePickerWidget.value,
+      hour: thisBooking.hourPickerWidget.value,
+      table: parseInt(thisBooking.selectedTable),
+      duration: parseInt(thisBooking.hoursAmountWidget.value),
+      ppl: parseInt(thisBooking.peopleAmountWidget.value),
+      starters: [],
+      phone: thisBooking.dom.phone.value,
+      address: thisBooking.dom.address.value,
+    };
+
+    for (let starter of thisBooking.dom.starters) {
+      if (starter.checked) {
+        payload.starters.push(starter.value);
+      }
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (parsedResponse) {
+        console.log('parsedRespones', parsedResponse);
+      });
+
+    thisBooking.makeBooked(
+      payload.date,
+      payload.hour,
+      payload.duration,
+      payload.table
+    );
+    thisBooking.updateDOM();
+  }
+
   render(element) {
     const thisBooking = this;
 
@@ -215,6 +275,22 @@ class Booking {
     thisBooking.dom.planTable = thisBooking.dom.wrapper.querySelector(
       select.containerOf.tablePlan
     );
+
+    thisBooking.dom.form = thisBooking.dom.wrapper.querySelector(
+      select.booking.form
+    );
+
+    thisBooking.dom.address = thisBooking.dom.form.querySelector(
+      select.booking.address
+    );
+
+    thisBooking.dom.phone = thisBooking.dom.form.querySelector(
+      select.booking.phone
+    );
+
+    thisBooking.dom.starters = thisBooking.dom.form.querySelectorAll(
+      select.booking.checkbox
+    );
   }
   initWidgets() {
     const thisBooking = this;
@@ -238,6 +314,18 @@ class Booking {
 
     thisBooking.dom.hoursAmount.addEventListener('updated', function (event) {
       event.preventDefault();
+    });
+
+    thisBooking.dom.form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (
+        thisBooking.selectedTable == '' ||
+        thisBooking.selectedTable == null
+      ) {
+        alert('Brak wybranego stolika do rezerwacji');
+      } else {
+        thisBooking.sendBooking();
+      }
     });
   }
 }
