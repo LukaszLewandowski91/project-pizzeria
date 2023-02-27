@@ -18,6 +18,14 @@
   transition: all 2s;
 }
 
+.splash-title {
+  opacity: 0;
+  transition: all 1s;
+}
+
 .splash:hover .splash-inner {
   transform: translateY(-50%);
+  .splash-title {
+    opacity: 1;
+  }
 }
