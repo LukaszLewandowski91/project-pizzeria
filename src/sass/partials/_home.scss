@@ -3,3 +3,21 @@
 
   background: $color-main;
 }
+
+.splash {
+  position: relative;
+}
+
+.splash-inner {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%, -50px);
+  transition: all 2s;
+}
+
+.splash:hover .splash-inner {
+  transform: translateY(-50%);
+}

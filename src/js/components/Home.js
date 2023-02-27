@@ -1,5 +1,5 @@
-import { templates, select, settings, classNames } from '../settings.js';
-import utils from '../utils.js';
+import { templates } from '../settings.js';
+// import utils from '../utils.js';
 
 class HomePage {
   constructor(element) {
