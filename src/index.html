@@ -19,6 +19,7 @@
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
     <link rel="stylesheet" href="vendor/range-slider.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
   </head>
   <body>
     <header class="header">
@@ -29,6 +30,7 @@
             <h2 class="logo__subtitle">the best homemade Italian food</h2>
           </div>
           <div class="main-nav">
+            <a href="#home">HOME</a>
             <a href="#order">Order</a>
             <a href="#booking">Booking</a>
           </div>
@@ -83,6 +85,9 @@
     </header>
 
     <div id="pages">
+      <section id="home">
+        <div class="home-wrapper"></div>
+      </section>
       <section id="order">
         <div id="product-list" class="product-list container"></div>
       </section>
@@ -90,6 +95,27 @@
         <div class="booking-wrapper container"></div>
       </section>
     </div>
+
+    <script id="template-home-page" type="text/x-handlebars-template">
+      <div class='py-5 container'>
+        <div class='row justify-content-center'>
+          <div class='col-6'>
+
+            <img src='images/home/pizza-1.jpg' />
+
+          </div>
+          <div class='col-6'>
+
+            <img src='images/home/pizza-2.jpg' />
+
+          </div>
+        </div>
+        <div class='my-5 col-12 opening-hours'>
+
+        </div>
+
+      </div>
+    </script>
 
     <script id="template-cart-product" type="text/x-handlebars-template">
       <li>
@@ -296,5 +322,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="vendor/range-slider.min.js"></script>
     <script src="js/app.js" type="module"></script>
+    <script src="vendor/bootstrap.bundle.min.js"></script>
   </body>
 </html>
