@@ -234,15 +234,14 @@ class Booking {
       })
       .then(function (parsedResponse) {
         console.log('parsedRespones', parsedResponse);
+        thisBooking.makeBooked(
+          payload.date,
+          payload.hour,
+          payload.duration,
+          payload.table
+        );
+        thisBooking.updateDOM();
       });
-
-    thisBooking.makeBooked(
-      payload.date,
-      payload.hour,
-      payload.duration,
-      payload.table
-    );
-    thisBooking.updateDOM();
   }
 
   render(element) {
@@ -303,6 +302,8 @@ class Booking {
 
     thisBooking.datePickerWidget = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPickerWidget = new HourPicker(thisBooking.dom.hourPicker);
+
+    console.log('date picker', thisBooking.datePickerWidget);
 
     thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
