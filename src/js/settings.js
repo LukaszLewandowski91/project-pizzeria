@@ -53,6 +53,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    homeLinks: '.section-links a',
   },
   cart: {
     productList: '.cart__order-summary',
