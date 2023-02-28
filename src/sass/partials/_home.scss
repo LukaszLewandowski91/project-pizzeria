@@ -172,6 +172,11 @@
   display: flex;
 }
 
+.picture {
+  width: $base-size * 16;
+  height: $base-size * 16;
+}
+
 .favorite-image {
   display: inline-flex;
   justify-content: center;
@@ -183,11 +188,12 @@
     width: $base-size * 16;
     height: $base-size * 16;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   .favorite-icon {
     font-size: $base-size * 2;
-    color: $color-main;
+    //color: $color-main;
     opacity: 1;
     position: absolute;
     transition: all 1s;
@@ -196,7 +202,7 @@
 
 .favorite-icon a {
   text-decoration: none;
-  color: $color-main;
+  color: white;
   transition: all 1s;
 
   i {
@@ -209,12 +215,22 @@
 .favorite-image:hover .favorite-icon i {
   visibility: visible;
   transform: scale(2);
+  color: $color-danger;
   transition: 1s ease-in-out;
 }
 
-.favorite-icon a:hover {
-  color: $color-danger;
+.favorite-image:hover::after {
+  content: '';
+  position: absolute;
+  width: $base-size * 16;
+  height: $base-size * 16;
+  opacity: 0.25;
+  background-color: grey;
+  transition: 1s ease-in-out;
+  border-radius: 5px;
 }
+
+//footer
 
 .footer a {
   margin: 10px;

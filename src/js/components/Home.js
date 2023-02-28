@@ -1,11 +1,12 @@
 import { classNames, select, templates } from '../settings.js';
-// import utils from '../utils.js';
+import Carousel from './Carousel.js';
 
 class HomePage {
   constructor(element) {
     const thisHome = this;
 
     thisHome.render(element);
+    thisHome.initCarousel(select.containerOf.carousel);
   }
 
   render(element) {
@@ -68,6 +69,10 @@ class HomePage {
         link.getAttribute('href') == '#' + pageId
       );
     }
+  }
+
+  initCarousel(element) {
+    new Carousel(element);
   }
 }
 
