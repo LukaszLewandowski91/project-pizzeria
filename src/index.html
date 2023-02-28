@@ -18,8 +18,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+    <link rel="stylesheet" href="vendor/flickity.min.css" />
     <link rel="stylesheet" href="vendor/range-slider.min.css" />
-    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
   </head>
   <body>
     <header class="header">
@@ -86,7 +86,7 @@
 
     <div id="pages">
       <section id="home">
-        <div class="home-wrapper"></div>
+        <div class="home-wrapper container"></div>
       </section>
       <section id="order">
         <div id="product-list" class="product-list container"></div>
@@ -97,32 +97,142 @@
     </div>
 
     <script id="template-home-page" type="text/x-handlebars-template">
-      <div class='py-5 container'>
-        <div class='row justify-content-center'>
-          <div class='col-6 splash'>
+      <div class='container'>
+        <div class='section-links top'>
+          <div class='link-order'>
+            <h3>ORDER ONLINE</h3>
+            <p>Delicious food delivered to your door</p>
             <a href='#order'>
               <img src='images/home/pizza-1.jpg' />
-              <div class='splash-inner'>
-                <h2>tekst</h2>
-              </div>
             </a>
           </div>
-          <div class='col-6 splash'>
-            <a href='#order'>
+          <div class='link-booking'>
+            <h3>BOOK A TABLE</h3>
+            <p>Select table for your visit</p>
+            <a href='#booking'>
               <img src='images/home/pizza-2.jpg' />
-              <div class='splash-inner'>
-                <h2>tekst</h2>
-                <div class='splash-title'>
-                  <h3>test3</h3>
-                </div>
-              </div>
             </a>
           </div>
         </div>
-        <div class='my-5 col-12 opening-hours'>
-
+        <div class='section-links bottom'>
+          <div class='home-opening'>
+            <h3>OPENING HOURS</h3>
+            <p>TUE - SUN, 12 PM - 12 AM</p>
+          </div>
         </div>
 
+      </div>
+      <div class='carousel' data-flickity='{ "autoPlay": true }'>
+        <div class='carousel-cell'>
+          <div class='box-opinion'>
+            <div class='box-image'>
+              <img src='images/home/pizza-3.jpg' alt='' />
+            </div>
+            <div class='box-description'>
+              <h3>Delicious food</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus quam ipsum, pariatur sint commodi vel ratione quis illo
+                iusto nulla.</p>
+              <p>- Łukasz Lewandowski</p>
+            </div>
+          </div>
+
+        </div>
+        <div class='carousel-cell'>
+          <div class='box-opinion'>
+            <div class='box-image'>
+              <img src='images/home/pizza-3.jpg' alt='' />
+            </div>
+            <div class='box-description'>
+              <h3>Good Snacks</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus quam ipsum, pariatur sint commodi vel ratione quis illo
+                iusto nulla.</p>
+              <p>- Robert Lewandowski</p>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-cell'>
+          <div class='box-opinion'>
+            <div class='box-image'>
+              <img src='images/home/pizza-3.jpg' alt='' />
+            </div>
+            <div class='box-description'>
+              <h3>Great vaneu</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus quam ipsum, pariatur sint commodi vel ratione quis illo
+                iusto nulla.</p>
+              <p>- Robert Lewandowski</p>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-cell'>
+          <div class='box-opinion'>
+            <div class='box-image'>
+              <img src='images/home/pizza-3.jpg' alt='' />
+            </div>
+            <div class='box-description'>
+              <h3>Best services</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus quam ipsum, pariatur sint commodi vel ratione quis illo
+                iusto nulla.</p>
+              <p>- Robert Lewandowski</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class='section-image'>
+        <div class='favorite-row'>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-4.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-5.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-6.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+        </div>
+        <div class='favorite-row'>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-7.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-8.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+          <div class='favorite-image'>
+            <img src='images/home/pizza-9.jpg' />
+            <div class='favorite-icon'>
+              <a href='#'><i class='fas fa-heart'></i></a>
+              <a href='#'><i class='fas fa-share-alt'></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='footer'>
+        <a href='#'>View more on Instagram</a>
       </div>
     </script>
 
@@ -330,6 +440,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="vendor/range-slider.min.js"></script>
+    <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="js/app.js" type="module"></script>
     <script src="vendor/bootstrap.bundle.min.js"></script>
   </body>
